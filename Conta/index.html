@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Starter Template for Bootstrap 3.3.5</title>
+    <link rel="shortcut icon" href="">
+    <link rel="stylesheet" href="/recursos/Css/bootstrap.min.css">
+    <link rel="stylesheet" href="/recursos/Css/estilos.css">
+    <style>
+        body {
+            padding-top: 50px;
+        }
+
+        .starter-template {
+            padding: 40px 15px;
+            text-align: center;
+        }
+    </style>
+
+    <!--[if IE]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body style="font-family:Roboto;">
+    <!-- NavBar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">UPVT</a>
+            </div>
+
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Inicio</a></li>
+                    <li><a href="#about">Rayado diario</a></li>
+                    <li><a href="#contact">Balance general</a></li>
+                    <li><a href="#contact">Información</a></li>
+                </ul>
+            </div>
+            <!--.nav-collapse -->
+        </div>
+    </nav>
+
+    <!-- Inicio -->
+    <div class="container">
+        <div class="starter-template" style="padding-top:20px;">
+            <div><img src="recursos/logo.png"></div>
+            <h1 style="font-family:Roboto;">Proyecto de contabilidad</h1>
+            <p class="lead">Este sitio es la ejecución de un sistema de contabilidad por medio de una pagina web.</p>
+        </div>
+    </div>
+
+    <!--- App -->
+    <div class="col-lg-12" style="padding:0px;">
+
+        <!-- Formulario -->
+        <div class="well col-lg-4 col-lg-offset-1 col-md-offset-3 col-md-6">
+
+            <form class="form-horizontal" data-bind="submit: addItem">
+                <fieldset>
+                    <legend>Formulario</legend>
+                    <div class="form-group">
+                        <label for="operaciones" class="col-lg-3 col-lg-offset-1 control-label">Activo/Pasivo</label>
+                        <div class="col-lg-8" style="margin-bottom:20px;">
+                            <select class="form-control" id="select">
+                                <option>Acredores hipotecarios</option>
+                                <option>Bancos</option>
+                                <option>Caja</option>
+                                <option>Capital Social</option>
+                                <option>Clientes</option>
+                                <option>Devolución por compra</option>
+                                <option>Devolución sobre venta</option>
+                                <option>Documentos por cobrar</option>
+                                <option>Documentos por pagar</option>
+                                <option>Equipo de cómputo</option>
+                                <option>Equipo de reparto</option>
+                                <option>Gastos por compra</option>
+                                <option>Hipotecas por pagar</option>
+                                <option>Inventario inicial</option>
+
+                                <option>Inversión permanente</option>
+                                <option>Mobiliario y equipo</option>
+                                <option>Proveedores</option>
+                                <option>Rebaja por compra</option>
+                                <option>Rebaja sobre venta</option>
+                                <option>Terrenos</option>
+                                <option>Ventas</option>
+
+
+                            </select>
+                        </div>
+                        <br>
+                        <label for="cantidad" class="control-label col-lg-offset-2 col-lg-4">Cantidad</label>
+                        <div class="col-lg-6" style="margin-bottom:20px;">
+                            <input type="number" class="form-control" id="inputEmail" placeholder="Sólo números" data-bind='value: itemToAdd, valueUpdate: "afterkeydown"'>
+                        </div>
+                        <br>
+
+                        <label for="asiento" class="col-lg-offset-5 col-lg-4 control-label">Asiento</label>
+                        <div class="col-lg-3">
+                            <input type="number" class="form-control" id="inputEmail">
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-4 col-lg-offset-9 col-sm-offset-8 col-xs-offset-8">
+                            <!--<button type="reset" class="btn btn-default">Cancelar</button>-->
+                            <button type="Submit" class="btn btn-success" data-bind="enable: itemToAdd().length > 0">Aceptar</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+        <!-- Lista -->
+
+        <div class="panel panel-success col-lg-5 col-lg-offset-1 col-md-offset-3 col-md-6" style="padding:0px;">
+            <div class="panel-heading col-lg-12 col-lg-offset-0">
+                <h3 class="panel-title">Rayado Diario</h3>
+            </div>
+            <div class="panel-body" style="padding:0px;">
+                <table class="table table-striped table-hover" style="text-align:center;">
+                    <thead>
+                        <tr class="active">
+                            <th>#</th>
+                            <th>Asiento</th>
+                            <th>Activo/Pasivo</th>
+                            <th>Cantidad</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>Acredores Hipotecarios</td>
+                            <td>50000</td>
+                            <td style="padding-right:0px;padding-left:0px;"><a href="#" class="btn btn-primary btn-xs">Editar</a>
+                                <a href="#" class="btn btn-primary btn-xs">Eliminar</a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td style="text-align:center;">2</td>
+                            <td>Column content</td>
+                            <td>20000</td>
+                            <td style="padding-right:0px;padding-left:0px;text-align:center;"><a href="#" class="btn btn-primary btn-xs">Editar</a>
+                                <a href="#" class="btn btn-primary btn-xs">Eliminar</a></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td style="text-align:center;">2</td>
+                            <td>Column content</td>
+                            <td>20000</td>
+                            <td style="padding-right:0px;padding-left:0px;text-align:center;"><a href="#" class="btn btn-primary btn-xs">Editar</a>
+                                <a href="#" class="btn btn-primary btn-xs">Eliminar</a></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+
+        <!-- Tabla1 -->
+        <div class="col-lg-offset-1 col-lg-10" style="padding:20px 0px;text-align:center;">
+            <table class="table table-striped table-hover ">
+                <thead>
+                    <tr class="success">
+                        <th>Total activos</th>
+                        <th>Total pasivos</th>
+                        <th>Total capital</th>
+                        <th>Total pasivos + capital</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Column content</td>
+                        <td data-bind="text: itemToAdd">Column content</td>
+                        <td>Column content</td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <br>
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted"></p>
+        </div>
+    </footer>
+
+    <footer class="footer">
+        <div class="container-fluid" style="background-color: #303030;color:white;">
+            <!--<img src="recursos/HTML5.png" class="col-lg-2 col-xs-2 col-sm-2">-->
+            <img src="recursos/javascript.png" class="col-lg-4 col-lg-offset-1 col-xs-6">
+
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1 col-md-6 col-xs-6" style="padding-top:20px;">
+                    <h4 class="white-text">Sistema contable elaborado para el curso de administración y contabilidad, unidad 4, por:
+                        <p class="grey-text text-lighten-4"><ul><li>Alejandro</li>
+<li>Julio</li>
+<li>Oliver</li>
+<li>Carlos</li>
+<li>Pedro</li></ul>                        </p></h4>
+                </div>
+
+            </div>
+        </div>
+        <div class="footer-copyright text-center">
+            <div class="container-fluid" style="background-color: #212121;color:white;">
+                <p class="text-muted">© 2016 Elaborado con: HTML5, CSS3, Javascript, Bootstrap, Knockout.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!--Javascript-->
+    <script src="/recursos/Js/jquery-2.2.1.min.js"></script>
+    <script src="/recursos/Js/bootstrap.min.js"></script>
+    <script src="recursos/Js/knockout-3.4.0.js"></script>
+    <script src="recursos/Js/din.js"></script>
+</body>
+
+</html>
